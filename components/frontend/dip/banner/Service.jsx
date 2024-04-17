@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Banner() {
+export default function Service() {
   return (
     <div>
         <div className="banner bg-gradient-to-br from-[#F4CFD7] to-[#FFFFFF]">
@@ -57,63 +57,29 @@ export default function Banner() {
             </nav>
 
 
-            <div className="mx-auto w-full max-w-screen-xl px-4 py-10">
-                <div id="default-carousel" className="relative w-full" data-carousel="slide">
-                    <div className="relative overflow-hidden rounded-lg">
-                        <div className="duration-700 ease-in-out" data-carousel-item>
-                            <div className="md:flex items-center">
-                                <div className="w-full md:w-7/12 flex justify-center">
-                                    <div className="py-4 w-3/5">
-                                        <h1 className="font-bold text-3xl mt-6">
-                                            We Are Creative Agency, Create & Make Your Dream
-                                        </h1>
-                                        <p className="my-6">
-                                            A team of 100+ experienced developers and designers, ready to help you
-                                            build your web and mobile applications.
-                                        </p>
-                                        <div className="">
-                                            <button className="font-inter bg-btnBg cs-btn text-textColor mt-10">
-                                            Get Start
-                                            </button>
-                                        </div>
-                                    </div>
+            <div className="mx-auto w-full max-w-screen-xl px-4 py-12">
+                <div className="flex flex-col justify-center items-center">
+                    <h2 className="text-2xl text-gray-900 font-blog">Service Details</h2>
+                    <nav className="flex mt-3" aria-label="Breadcrumb">
+                        <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                            <li className="inline-flex items-center">
+                                <a href="#" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                <svg className="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                                </svg>
+                                Home
+                                </a>
+                            </li>
+                            <li aria-current="page">
+                                <div className="flex items-center">
+                                <svg className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span className="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Service</span>
                                 </div>
-                                <div className="w-full md:w-5/12">
-                                    <div className="relative flex justify-center md:justify-end">
-                                        <img src="./home/image25.png" alt="homeone" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="/docs/images/carousel/carousel-2.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="/docs/images/carousel/carousel-3.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="/docs/images/carousel/carousel-4.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="/docs/images/carousel/carousel-5.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                    </div>
-                    <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg className="w-4 h-4 text-gray-400 dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
-                            </svg>
-                            <span className="sr-only">Previous</span>
-                        </span>
-                    </button>
-                    <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg className="w-4 h-4 text-gray-400 dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
-                            </svg>
-                            <span className="sr-only">Next</span>
-                        </span>
-                    </button>
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
