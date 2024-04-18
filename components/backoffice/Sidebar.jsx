@@ -18,6 +18,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
   const [openMenu, setOpenMenu] = useState(false);
   const sidebarLinks = [
     { title: "Customers", icon: Users2, href: "/dashboard/customers" },
+    { title: "Project", icon: Warehouse, href: "/dashboard/project" },
     { title: "Markets", icon: Warehouse, href: "/dashboard/markets" },
     { title: "Farmers", icon: Framer, href: "/dashboard/farmers" },
     { title: "Orders", icon: Compass, href: "/dashboard/orders" },
@@ -44,6 +45,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       className={`dark:bg-slate-700 bg-slate-50 space-y-6 w-60 h-screen dark:text-slate-50 text-slate-700 fixed left-0 top-0 shadow-md overflow-y-auto pb-16 sm:pb-0 ${
         showSidebar ? "sm:block mt-16 sm:mt-0" : "hidden sm:block"
       }`}
+      style={{ zIndex: 1 }}
     >
       <Link
         className="space-y-5 px-6 py-4"

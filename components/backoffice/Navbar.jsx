@@ -14,6 +14,7 @@ import ThemeSwitcherBtn from '../ThemeSwitcherBtn';
 export default function Navbar({ setShowSidebar, showSidebar }) {
   return (
     <div
+    style={{zIndex: 1}}
       className={`flex items-center justify-between bg-white dark:bg-slate-800  text-slate-50 h-16 px-8 py-4 fixed top-0 w-full sm:pr-[15rem]`}
     >
       <button

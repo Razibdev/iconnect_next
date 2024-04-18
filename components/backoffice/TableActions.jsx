@@ -4,7 +4,7 @@ export default function TableActions() {
   return (
       <div className="flex justify-between py-6 px-12 mt-4 bg-white dark:bg-slate-700 rounded-lg gap-8">
         <div className="flex-grow">
-          <label for="table-search" className="sr-only">
+          <label htmlFor="table-search" className="sr-only">
             Search
           </label>
           <div className="relative mt-1">
