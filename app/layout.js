@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "../styles/main.scss";
 import Providers from "@/context/Providers";
-
+import { AuthProvider } from "@/context/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,8 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
-        {/* <script src="../flowbite/dist/flowbite.min.js"></script> */}
+        <AuthProvider>
+          <Providers>{children}</Providers>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -13,17 +13,20 @@ import {
 } from "@/components/ui/collapsible";
 
 
-export default function Sidebar({ showSidebar, setShowSidebar }) {
+export default function Sidebar({ showSidebar, setShowSidebar, logout }) {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   const sidebarLinks = [
     { title: "Customers", icon: Users2, href: "/dashboard/customers" },
     { title: "Project", icon: Warehouse, href: "/dashboard/project" },
-    { title: "Markets", icon: Warehouse, href: "/dashboard/markets" },
-    { title: "Farmers", icon: Framer, href: "/dashboard/farmers" },
-    { title: "Orders", icon: Compass, href: "/dashboard/orders" },
-    { title: "Wallet", icon: CircleDollarSign, href: "/dashboard/wallet" },
-    { title: "Staff", icon: User, href: "/dashboard/staff" },
+    { title: "Portfolio", icon: Framer, href: "/dashboard/portfolio" },
+    { title: "Blog", icon: Compass, href: "/dashboard/blog" },
+    { title: "Team", icon: User, href: "/dashboard/team" },
+    // { title: "Markets", icon: Warehouse, href: "/dashboard/markets" },
+    // { title: "Farmers", icon: Framer, href: "/dashboard/farmers" },
+    // { title: "Orders", icon: Compass, href: "/dashboard/orders" },
+    // { title: "Wallet", icon: CircleDollarSign, href: "/dashboard/wallet" },
+    // { title: "Staff", icon: User, href: "/dashboard/staff" },
     { title: "Setting", icon: Settings, href: "/dashboard/setting" },
     {
       title: "Online Store",
@@ -117,7 +120,10 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
         })}
 
         <div className="px-6 py-2">
-          <button className="flex items-center space-x-3 bg-green-600 px-6 py-2 rounded-md text-slate-50">
+          <button
+            onClick={() => logout()}
+            className="flex items-center space-x-3 bg-green-600 px-6 py-2 rounded-md text-slate-50"
+          >
             <LogOut />
             <span>Logout</span>
           </button>

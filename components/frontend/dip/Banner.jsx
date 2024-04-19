@@ -34,20 +34,13 @@ export default function Banner() {
                         <div className="flex space-x-2 md:space-x-4">
                             <span className="flex items-center">
                                 <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-<<<<<<< Updated upstream
                                     <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-=======
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
->>>>>>> Stashed changes
                                 </svg>
                             </span>
                             <span className="flex items-center">
                                 <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-<<<<<<< Updated upstream
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-=======
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
->>>>>>> Stashed changes
+                               
                                 </svg>
                             </span>
                             <button typey="button" className="flex items-center gap-x-2 font-inter bg-btnBg cs-btn text-textColor px-3 py-1.5 md:px-6 md:py-2 rounded-lg">
