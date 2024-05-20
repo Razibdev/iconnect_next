@@ -1,7 +1,7 @@
-import React from 'react'
-import SmallCard from './SmallCard';
+import React from "react";
+import SmallCard from "./SmallCard";
 import { CheckCheck, Loader2, RefreshCcw, ShoppingCart } from "lucide-react";
-export default function 
+export default function SmallCards
 () {
     const orderStatus = [
       {
