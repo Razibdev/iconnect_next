@@ -1,9 +1,32 @@
-import React from 'react'
+"use client";
+import { useParams } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { getData } from "@/lib/getData";
+import ImageFile from "@/components/FormInputs/ImageFile";
 import Banner from "@/components/frontend/dip/banner/Blog";
 import Footer from "@/components/frontend/dip/Footer";
 
 
 export default function page() {
+
+    const { id } = useParams();
+
+    const [blog, setBlog] = useState(null);
+    const endpoint = "api/v1/blog/" + id; // Replace 'your-endpoint' with the actual endpoint
+  
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const data = await getData(endpoint, true);
+          setBlog(data.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+  
+      fetchData();
+    }, [endpoint]);
+
   return (
     <div>
       <div className='main-page'>
@@ -11,7 +34,7 @@ export default function page() {
 
         <div className="blog-details">
           <div className="mx-auto w-full max-w-screen-xl px-4 py-12">
-            <h1 className="title text-4xl text-gray-700 font-blod mb-2">Class aptent taciti ad litora torquenta</h1>
+            <h1 className="title text-4xl text-gray-700 font-blod mb-2">{ blog?.title }</h1>
             <div className="flex items-center gap-x-4 mb-5">
               <div className="flex items-center gap-x-3">
                 <a className="text-sm text-gray-500 dark:text-gray-400">Marketing</a>
@@ -19,11 +42,15 @@ export default function page() {
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400">04-jan-24  10:30 pm</div>
             </div>
-            <img src="./../blog/image-49.png" alt="blog" className="w-full object-cover" />
+            <ImageFile
+                src={blog?.image}
+                alt={blog?.title}
+                className="w-full object-cover"
+            />
 
             <div className="w-full flex gap-x-8 py-6">
               <div className="w-8/12">
-                <h3 className="font-medium text-lg text-gray-900 mb-3">Morbi mollis vestibulum sollicitudin. Nunc in eros a justo facilisis rutrum. Aenean id ullamcorper libero. Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna.</h3>
+                <h3 className="font-medium text-lg text-gray-900 mb-3">{blog?.description}</h3>
                 <p className="text-sm text-gray-500 mb-5">Lorem ipsum color sit amet, consectetur adi pisicine elt, sed do eismod tempor incialount ut labore etesc dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi.Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi</p>
                 
                 <div className="relative border-s-4 border-red-400 dark:border-gray-700 mb-5">                  
@@ -34,7 +61,7 @@ export default function page() {
                 <h2 className="font-medium text-lg text-gray-900 mb-3">Monthly Web Development Update Just TimeDesign Variable Fallbacks.</h2>
                 <p className="text-sm text-gray-400 mb-3">Lorem ipsum color sit amet, consectetur adi pisicine elt, sed do eismod tempor incialount ut labore etesc dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi</p>
                 
-                <img src="./../blog/image-50.png" alt="blog" className="w-full object-cover mb-4" />
+                <img src="./../../blog/image-50.png" alt="blog" className="w-full object-cover mb-4" />
                 <h2 className="font-medium text-xl text-gray-900 mb-3">Fixed Elements And Overlaps Incredibly Easy And Fun Methods For Prototype.</h2>
                 <p className="text-sm text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etesci dolore maona aboua. Ut enim ao minim veniam quis nostrud exercitation ullamco labors mist</p>
               

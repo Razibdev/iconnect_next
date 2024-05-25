@@ -1,7 +1,26 @@
-import React from 'react'
+"use client";
+import React, { useState, useEffect } from "react";
+import { getData } from "@/lib/getData";
 import Card from "@/components/frontend/dip/service/Card";
 
 export default function Service() {
+  
+    const [projects, setProjects] = useState(null);
+    const endpoint = "api/v1/project"; // Replace 'your-endpoint' with the actual endpoint
+
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const data = await getData(endpoint, false);
+          setProjects(data.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      fetchData();
+    }, [endpoint]);
+    
   return (
     <div>
         <div className="bg-gray-100">
@@ -16,16 +35,12 @@ export default function Service() {
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Our web developers have an uncanny ability to bring complex web designs to life. We build for the future.</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6">
-                  
-                  <Card></Card>
-                  <Card></Card>
-                  <Card></Card>
-                  <Card></Card>
-                  <Card></Card>
-                  <Card></Card>
-                  <Card></Card>
-                  <Card></Card>
-
+              {projects &&
+                projects.map((item, i) => {
+                return (
+                  <Card service={item}></Card>
+                  );
+                })}
               </div>
           </div>
         </div>

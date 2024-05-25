@@ -30,7 +30,7 @@ export default function Login({ initialData = {}, isUpdate = false }) {
  }
 
   async function onSubmit(data) {
-   const response = await fetch("http://localhost:5000/api/v1/users/auth/login",{
+   const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/api/v1/users/auth/login",{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',

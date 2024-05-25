@@ -1,7 +1,24 @@
-import React from 'react'
+"use client";
+import React, { useState, useEffect } from "react";
+import { getData } from "@/lib/getData";
 import Card from "@/components/frontend/dip/blog/Card";
 
 export default function Blog() {
+    const [blogs, setBlogs] = useState(null);
+    const endpoint = "api/v1/blog"; // Replace 'your-endpoint' with the actual endpoint
+
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const data = await getData(endpoint, false);
+          setBlogs(data.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      fetchData();
+    }, [endpoint]);
   return (
     <div>
       <div className="mx-auto w-full max-w-screen-xl px-4 py-8">
@@ -15,9 +32,12 @@ export default function Blog() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
               
-              <Card></Card>
-              <Card></Card>
-              <Card></Card>
+            {blogs &&
+              blogs.map((item, i) => {
+              return (
+                <Card blog={item}></Card>
+                );
+              })}
 
           </div>
       </div>

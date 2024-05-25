@@ -1,14 +1,20 @@
-import React from 'react'
+"use client";
+import React from "react";
+import ImageFile from "@/components/FormInputs/ImageFile";
 
-export default function Card() {
+export default function Card({member}) {
   return (
     <div>
         <div className="card relative overflow-hidden bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ease-in-out duration-300 hover:shadow-lg hover:-translate-y-4">
             <div className="after:absolute after:w-80 after:h-80 after:-bottom-64 after:left-1/2 after:transform after:-translate-x-1/2 after:rounded-full after:bg-red-200/30 after:z-0">
                 <div className="relative z-10 flex flex-col items-center py-4 px-3">
-                    <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="Bonnie image"/>
-                    <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">Web Development</h5>
-                    <span className="text-sm text-center text-gray-500 dark:text-gray-400">Our web developers have an uncanny ability to bring complex web designs to life. We build for the future.</span>
+                    <ImageFile
+                        src={member?.image}
+                        alt={member?.name}
+                        className="w-24 h-24 mb-3 rounded-full shadow-lg"
+                    />
+                    <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{member?.name}</h5>
+                    <span className="text-sm text-center text-gray-500 dark:text-gray-400">{member?.description}</span>
                     
                     <div className="flex gap-x-4 mt-8 pb-2">
                         <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">

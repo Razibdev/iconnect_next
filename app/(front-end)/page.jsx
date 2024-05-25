@@ -6,6 +6,7 @@ import Portfolio from "@/components/frontend/dip/Portfolio";
 import Blog from "@/components/frontend/dip/Blog";
 import Member from "@/components/frontend/dip/Member";
 import LetsMake from "@/components/frontend/dip/LetsMake";
+import Contact from "@/components/frontend/dip/Contact";
 import Footer from "@/components/frontend/dip/Footer";
 
 
@@ -20,6 +21,7 @@ export default function page() {
         <Member></Member>
         <Blog></Blog>
         <LetsMake></LetsMake>
+        <Contact></Contact>
         <Footer></Footer>
       </div>
     </div>

@@ -1,7 +1,27 @@
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
+import { getData } from "@/lib/getData";
 import Card from "@/components/frontend/dip/member/Card";
 
 export default function Member() {
+
+  const [members, setMembers] = useState(null);
+  const endpoint = "api/v1/team"; // Replace 'your-endpoint' with the actual endpoint
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await getData(endpoint, false);
+        setMembers(data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData();
+  }, [endpoint]);
+  
+
   return (
     <div>
         <div className="bg-gray-100">
@@ -16,11 +36,12 @@ export default function Member() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-4">
                     
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
+                {members &&
+                  members.map((item, i) => {
+                  return (
+                    <Card member={item}></Card>
+                    );
+                  })}
 
                 </div>
             </div>

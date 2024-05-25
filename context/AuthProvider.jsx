@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
   // Simulate checking if user is authenticated
   const checkAuth = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/v1/users", {
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/api/v1/users", {
         credentials: "include",
       });
 
@@ -31,9 +31,9 @@ export function AuthProvider({ children }) {
 
     } catch (e) {
       setUser(null);
-      if (pathname !== "/") {
-        router.push("/login");
-      }
+      // if (pathname !== "/") {
+      //   router.push("/login");
+      // }
     }
   };
 
@@ -61,7 +61,7 @@ export function AuthProvider({ children }) {
   const logout = async() => {
     // Your logout logic here
     setUser(null);
-     const response = await fetch("http://localhost:5000/api/v1/users/logout", {
+     const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/api/v1/users/logout", {
        credentials: "include",
      });
      

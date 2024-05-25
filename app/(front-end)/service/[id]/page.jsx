@@ -1,13 +1,35 @@
-import React from 'react'
+"use client";
+import { useParams } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { getData } from "@/lib/getData";
+import ImageFile from "@/components/FormInputs/ImageFile";
 import Banner from "@/components/frontend/dip/banner/Service";
 import Footer from "@/components/frontend/dip/Footer";
 
 
 export default function page() {
+    const { id } = useParams();
+
+    const [project, setProjects] = useState(null);
+    const endpoint = "api/v1/project/" + id; // Replace 'your-endpoint' with the actual endpoint
+  
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const data = await getData(endpoint, true);
+          setProjects(data.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+  
+      fetchData();
+    }, [endpoint]);
+
   return (
     <div>
       <div className='main-page'>
-        <Banner></Banner>
+        <Banner project={project}></Banner>
 
         <div className="blog-details">
           <div className="mx-auto w-full max-w-screen-xl px-4 py-12">
@@ -69,7 +91,7 @@ export default function page() {
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                             </svg>
                         </button>
-                        <img src="./../blog/image-50.png" alt="blog" className="w-full object-cover mb-4" />
+                        <img src="./../../blog/image-50.png" alt="blog" className="w-full object-cover mb-4" />
                     </div>
 
                     <div className="mb-4 px-4 py-3">
@@ -127,9 +149,13 @@ export default function page() {
                     </div>
                 </div>
                 <div className="w-8/12">
-                    <img src="./../blog/image-50.png" alt="blog" className="w-full h-96 object-cover mb-4" />
-                    <h2 className="font-medium text-xl text-gray-900 mb-3">Fixed Elements And Overlaps Incredibly Easy And Fun Methods For Prototype.</h2>
-                    <p className="text-sm text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etesci dolore maona aboua. Ut enim ao minim veniam quis nostrud exercitation ullamco labors mist</p>
+                    <ImageFile
+                        src={project?.image}
+                        alt={project?.project_name}
+                        className="w-full h-96 object-cover mb-4"
+                    />
+                    <h2 className="font-medium text-xl text-gray-900 mb-3">{project?.project_name}</h2>
+                    <p className="text-sm text-gray-500 mb-3">{project?.description}</p>
                 
                     <div className="mx-auto w-full px-4 py-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-6 gap-y-6">
@@ -244,7 +270,7 @@ export default function page() {
                 <div className="flex items-center flex-col-reverse md:flex-row">
                     <div className="w-full md:w-5/12">
                         <div className="relative flex justify-center md:justify-start">
-                            <img src="./../service/service-19.png" alt="homeone" />
+                            <img src="./../../service/service-19.png" alt="homeone" />
                         </div>
                     </div>
                     <div className="w-full md:w-7/12">
