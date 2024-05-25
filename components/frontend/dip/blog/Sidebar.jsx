@@ -34,7 +34,7 @@ export default function Sidebar() {
                 <img className="w-20 h-16" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="image" />
                 </div>
                 <div className="w-full ps-3">
-                    <div className="text-gray-800 text-sm font-medium mb-1.5 dark:text-gray-400">New message from "Hey, what's up? All set for the presentation?"</div>
+                    <div className="text-gray-800 text-sm font-medium mb-1.5 dark:text-gray-400">New message from Hey, what is up? All set for the presentation?</div>
                     <div className="text-xs text-gray-400 dark:text-blue-500">04-jan-24 10:30 pm</div>
                 </div>
             </a>
@@ -43,7 +43,7 @@ export default function Sidebar() {
                 <img className="w-20 h-16" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="image" />
                 </div>
                 <div className="w-full ps-3">
-                    <div className="text-gray-800 text-sm font-medium mb-1.5 dark:text-gray-400">New message from "Hey, what's up? All set for the presentation?"</div>
+                    <div className="text-gray-800 text-sm font-medium mb-1.5 dark:text-gray-400">New message from Hey, what is up? All set for the presentation?</div>
                     <div className="text-xs text-gray-400 dark:text-blue-500">04-jan-24 10:30 pm</div>
                 </div>
             </a>
@@ -52,7 +52,7 @@ export default function Sidebar() {
                 <img className="w-20 h-16" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="image" />
                 </div>
                 <div className="w-full ps-3">
-                    <div className="text-gray-800 text-sm font-medium mb-1.5 dark:text-gray-400">New message from "Hey, what's up? All set for the presentation?"</div>
+                    <div className="text-gray-800 text-sm font-medium mb-1.5 dark:text-gray-400">New message from Hey, what is up? All set for the presentation?</div>
                     <div className="text-xs text-gray-400 dark:text-blue-500">04-jan-24 10:30 pm</div>
                 </div>
             </a>

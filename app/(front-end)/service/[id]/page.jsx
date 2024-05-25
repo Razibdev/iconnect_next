@@ -279,7 +279,7 @@ export default function page() {
                                 Insights and resources to help drive your business forward faster.
                             </h4>
                             <p className="my-6">
-                                We build results-oriented brand strategies and continually refine your campaigns for the greatest outcome. From full-scale digital marketing and advertising strategy, right through to our precise execution and reporting...that's right, we've got you covered
+                                We build results-oriented brand strategies and continually refine your campaigns for the greatest outcome. From full-scale digital marketing and advertising strategy, right through to our precise execution and reporting...that is right, we have got you covered
                             </p>
                             <div className="">
                                 <button className="font-inter bg-btnBg cs-btn text-textColor mt-10">

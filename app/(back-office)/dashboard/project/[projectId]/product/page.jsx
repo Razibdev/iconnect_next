@@ -2,10 +2,10 @@
 import React from "react";
 import PageHeader from "@/components/backoffice/PageHeader";
 import TableActions from "@/components/backoffice/TableActions";
-import CustomProductTable from '@/components/backoffice/CustomProductTable';
+// import CustomProductTable from '@/components/backoffice/CustomProductTable';
 import { useParams } from "next/navigation";
 
-export default function page() {
+export default function Page() {
 const {projectId} = useParams();
   return (
     <div className="">
@@ -20,7 +20,7 @@ const {projectId} = useParams();
       <TableActions />
       {/* Table */}
       <div className="mt-4">
-        <CustomProductTable />
+        {/* <CustomProductTable /> */}
       </div>
     </div>
   );

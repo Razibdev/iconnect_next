@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import TextFile from "@/components/FormInputs/TextFile";
-export default function test() {
+export default function Test() {
    const [imagePreviews, setImagePreviews] = useState([]);
    const [selectedFiles, setSelectedFiles] = useState([]);
 
