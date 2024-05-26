@@ -35,7 +35,7 @@ export default function Blog() {
             {blogs &&
               blogs.map((item, i) => {
               return (
-                <Card blog={item}></Card>
+                <Card blog={item} key={i}></Card>
                 );
               })}
 

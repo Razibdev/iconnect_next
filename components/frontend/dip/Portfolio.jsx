@@ -40,7 +40,7 @@ export default function Portfolio() {
                 {portfolioes &&
                     portfolioes.map((item, i) => {
                     return (
-                    <Card port={item}></Card>
+                    <Card port={item} key={i}></Card>
                     );
                 })}
             </div>

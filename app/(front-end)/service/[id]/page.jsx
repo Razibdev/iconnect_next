@@ -7,7 +7,7 @@ import Banner from "@/components/frontend/dip/banner/Service";
 import Footer from "@/components/frontend/dip/Footer";
 
 
-export default function page() {
+export default function Page() {
     const { id } = useParams();
 
     const [project, setProjects] = useState(null);

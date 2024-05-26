@@ -38,7 +38,7 @@ export default function Service() {
               {projects &&
                 projects.map((item, i) => {
                 return (
-                  <Card service={item}></Card>
+                  <Card service={item} key={i}></Card>
                   );
                 })}
               </div>

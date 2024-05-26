@@ -39,7 +39,7 @@ export default function Member() {
                 {members &&
                   members.map((item, i) => {
                   return (
-                    <Card member={item}></Card>
+                    <Card member={item} key={i}></Card>
                     );
                   })}
 
