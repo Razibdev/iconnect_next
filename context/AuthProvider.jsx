@@ -25,9 +25,9 @@ export function AuthProvider({ children }) {
       console.log('lo', content.data);
       if (!content.data) {
         setUser(null);
-        if (pathname !== '/'){
-            router.push("/login");
-        }
+         if (pathname.startsWith("/dashboard")) {
+           router.push("/login");
+         }
       }else{
          if (pathname == "/login") {
            router.push("/dashboard");
@@ -50,7 +50,7 @@ export function AuthProvider({ children }) {
             router.push("/dashboard");
         }
     }else{
-         if (pathname != "/") {
+         if (pathname.startsWith("/dashboard")) {
            router.push("/login");
          }
     }

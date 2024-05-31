@@ -20,7 +20,7 @@ export default function Card({blog}) {
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{blog?.description}</p>
                 <div className="">
-                    <Link href={`/dip/blog/${blog?._id}`} className="flex items-center gap-x-2 font-inter bg-btnBg cs-btn text-textColor mt-8 px-6 py-2">
+                    <Link href={`/blog/${blog?._id}`} className="flex items-center gap-x-2 font-inter bg-btnBg cs-btn text-textColor mt-8 px-6 py-2">
                         <span className="whitespace-nowrap text-sm">Read more</span>
                         <svg className="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
 

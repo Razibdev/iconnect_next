@@ -16,7 +16,7 @@ export default function Card({service}) {
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{service?.project_name}</h5>
                 <p className="text-sm text-center text-gray-500 dark:text-gray-400">{service?.description}</p>
                 <div className="flex mt-8">
-                    <Link href={`/dip/service/${service?._id}`} className="font-inter text-sm bg-btnBg cs-btn text-textColor flex justify-center items-center">
+                    <Link href={`/service/${service?._id}`} className="font-inter text-sm bg-btnBg cs-btn text-textColor flex justify-center items-center">
                         Read More
                     </Link>
                 </div>
