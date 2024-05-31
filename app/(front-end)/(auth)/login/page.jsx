@@ -24,6 +24,7 @@ export default function Login({ initialData = {}, isUpdate = false }) {
   localStorage.setItem("email", data.email);
   localStorage.setItem("gender", data.gender);
   localStorage.setItem("role", data.role);
+  localStorage.setItem("token", data.token);
   if(data){
     localStorage.setItem("isAuth", true);
   }

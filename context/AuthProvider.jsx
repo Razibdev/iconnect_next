@@ -8,14 +8,21 @@ export function AuthProvider({ children }) {
   const router = useRouter();
   const pathname = usePathname();
 
+
   // Simulate checking if user is authenticated
-  const checkAuth = async () => {
+  const checkAuth = async (token) => {
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/api/v1/users", {
-        credentials: "include",
-      });
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  credentials: 'include'
+});
 
       const content = await response.json();
+      console.log('lo', content.data);
       if (!content.data) {
         setUser(null);
         if (pathname !== '/'){
@@ -47,7 +54,8 @@ export function AuthProvider({ children }) {
            router.push("/login");
          }
     }
-    checkAuth();
+      const token = localStorage.getItem("authToken");
+    checkAuth(token);
   }, []);
 
   // Method to handle user login
@@ -62,8 +70,13 @@ export function AuthProvider({ children }) {
     // Your logout logic here
     setUser(null);
      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/api/v1/users/logout", {
-       credentials: "include",
-     });
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  credentials: 'include'
+});
      
      removeData();
      router.refresh();
